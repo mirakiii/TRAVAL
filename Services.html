@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Rock+Salt&family=Sacramento&family=Satisfy&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/public/Style.css">
+    <title>T R A V E L</title>
+</head>
+<body>
+    <nav class="Navbar navFont">
+        <div class="Logo navItems">
+            <img src="/pics/Logo2.jpg" Alt="L O G O">
+            TRAVEL
+        </div>
+        <ul>
+            <li class="navItems"><a href="/">Home</a></li>
+            <li class="navItems"><a href="/Services">Services</li>
+            <li class="navItems"><a href="/Explore">Explore</li>
+            <li class="navItems"><a href="/Contact">Contact</a></li>
+            <li class="navItems"><a href="/About">About</a></li>
+            
+            <div class="Search navItems">
+                <input type="text" name="Search" id="Search" placeholder="Search this website">
+                <button class="Button">Search</button>
+            </div>
+        </ul>
+    </nav>
+    <!-- Services -->
+    <Services class="Services servicesFont">
+        <!-- <img src="/pics/back2.jpg" height=700px width=1500px> -->
+        <div class="servicesBlock">
+            <div class="Tab">
+                <button class="tabBtn tabLink servicesFont" onclick="openLink(event, 'Flight')"><span class="Icon"><img src="pics/flight_icon.png"></span>Flight</button>
+                <button class="tabBtn tabLink servicesFont" onclick="openLink(event, 'Hotel')"><span class="Icon"><img src="pics/hotel_icon.png"></span>Hotel</button>
+                <button class="tabBtn tabLink servicesFont" onclick="openLink(event, 'Cab')"><span class="Icon"><img src="pics/cab_icon.png"></span>Cab</button>
+            </div>
+
+        
+        <div class="Flight myLink servicesFont" id="Flight">
+            <h1>Travel The World With Us</h1>
+            Find the best Flights and get the best fares and promotions.
+            <div class="formFlight form servicesFont">
+
+                <div class="formGrid">
+                <label for="flightFrom formInputs servicesFont">From</label><br>
+                <input type="text" name="flightFrom" id="flightFrom" placeholder="Departing From">
+                </div>
+
+                <div class="formGrid">
+                <label for="flightTo formInputs servicesFont">To</label><br>
+                <input type="text" name="flightTo" id="flightTo" placeholder="Arriving At">
+                </div>
+            </div>
+            <button class="formBtn servicesFont">
+                Search Flights and Dates
+            </button>
+        </div>
+        <div class="Hotel myLink servicesFont" id="Hotel">
+            <h1>Find The Best Hotels</h1>
+            Find the best Hotels and get the best fares and promotions.
+            <div class="formHotel form">
+
+                <div class="formGrid">
+                <label for="hotelLoc formInputs servicesFont">Location</label><br>
+                <input type="text" name="hotelLoc" id="hotelLoc" placeholder="Location">
+                </div>
+
+                <div class="formGrid">
+                <label for="hotelDate formInputs servicesFont" >Date</label><br>
+                <input type="date" name="hotelDate" id="hotelDate" placeholder="Date">
+                </div>
+
+            </div>
+            <button class="formBtn servicesFont">
+                Search Availability
+            </button>
+        </div> 
+        <div class="Cab myLink servicesFont" id="Cab">
+            <h1>Best car rentals in the world</h1>
+            <span class="discount">DISCOUNT !</span>
+            Special offer if you book today: 25% off anywhere in the world with CarServiceRentalRUs
+            <div class="formCab formInputs servicesFont form">
+                <label for="cabLoc">Location</label><br>
+                <input type="text" name="formCab" id="formCab" placeholder="pick-up-point">
+            </div>
+            <button class="formBtn servicesFont ">
+                Search cab
+            </button>
+        </div>
+    </div>
+    </Services>
+
+
+    <script> 
+        function openLink(evt, linkName){
+            var i, tabLinks, myLinks;
+
+            myLinks=document.getElementsByClassName("myLink");
+            //avoid displaying any blocks (Flights, hotels, cab)
+            for(i=0; i<myLinks.length; i++){
+                myLinks[i].style.display="none";
+            }
+
+            //to remove active btn effect
+            tabLinks=document.getElementsByClassName("tabLink");
+            for(i=0; i<myLinks.length; i++){
+                tabLinks[i].className = tabLinks[i].className.replace("tabBtnActive", "");
+                // tabLinks[i].className=tabLinks[i].className.replace(" w3-red", "");
+            }
+            //displaying specific bg pic
+            
+
+            //displaying specific block
+            document.getElementById(linkName).style.display="block";
+            evt.currentTarget.className+="tabBtnActive";
+        }
+        //starting itself flight is clicked
+        document.getElementsByClassName("tabLink")[0].click();
+    </script>
+</body>
+</html>

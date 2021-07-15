@@ -51,6 +51,10 @@ app.get("/weather", (req,res)=>{
 
 // LOGIN stuff
 
+//json thing 
+app.use(express.json());
+app.use(express.urlencoded([{extended:false}]));
+
 //connect db
 require("./src/db/corn");
 
@@ -63,6 +67,31 @@ app.get("/register", (req,res)=>{
 })
 
 //creating new user in db
+app.post("/register", async (req,res)=>{
+    try{
+        const password1 = req.body.password1;
+        const password2 = req.body.password2;
+
+        if(password1===password2){
+            const regFinal = new Register({
+                first:req.body.first,
+                last:req.body.last,
+                phone:req.body.phone,
+                mail:req.body.mail,
+                password1:req.body.password1,
+                password2:req.body.password2,
+            })
+            const regSave = await regFinal.save();
+            res.status(201).render('login.pug');
+        }
+        else{
+            res.send("PASSWORDS ARE NOT MATCHING");
+        }
+    }
+    catch(error){
+        res.status(400).send(error);
+    }
+})
 //validating user
 
 //listen server

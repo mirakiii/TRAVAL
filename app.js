@@ -93,7 +93,25 @@ app.post("/register", async (req,res)=>{
     }
 })
 //validating user
+app.post("/login", async (req, res)=>{
+    try{
+        const mail = req.body.mail;
+        const password1 = req.body.password1;
 
+        const usermail = await Register.findOne({mail:mail});
+
+        if(usermail.password1=== password1){
+            res.status(201).render('Home.pug');
+        }
+        else{
+            res.send("invalid password");
+        }
+    }
+    catch(error){
+        res.status(400).send("invalid mail");
+        console.log(error);
+    }
+})
 //listen server
 app.listen(port,hostname, ()=>{
     console.log(`Server running at http://${hostname}:${port}/`);

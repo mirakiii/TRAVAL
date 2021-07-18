@@ -545,3 +545,8 @@ input[type="mail"]{
     border:2px solid black;
 }
 
+/* MAP */
+
+.map iframe{
+    margin-top: 20px;
+}

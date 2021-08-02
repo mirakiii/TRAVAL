@@ -1,0 +1,17 @@
+/* weather */
+.cardd{
+    padding: 1.3rem;
+}
+/* Login and registr form inputs */
+.formlog, .formReg{
+    width: 70%;
+}
+.formReg{
+    height:78%;
+}
+
+.formReg input:nth-child(2n+0), .formReg input:nth-child(2n+1){
+    margin:15px auto;
+    width:60%;
+    float:none;
+}

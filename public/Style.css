@@ -39,15 +39,17 @@ font-family: 'Raleway', sans-serif; */
 .Navbar li :hover{
     color:white;
     background-color: var(--nav-color);
-    border-radius: 5px;
+    padding:7px 0px;
+    margin :auto;
 }
 .navItems{
     padding:7px 4px;
-    margin:auto 50px;
+    margin:auto 50px ;
     color: var(--nav-color);
 }
 .navItems:hover{
     background-color: var(--nav-color);
+    color: white;
 }
 .Search{
     float: right;

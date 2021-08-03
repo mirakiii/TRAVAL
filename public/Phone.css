@@ -15,3 +15,7 @@
     width:60%;
     float:none;
 }
+/*  */
+.navbar ul {
+    display: none;
+}

@@ -35,26 +35,32 @@ font-family: 'Raleway', sans-serif; */
 .Navbar li a{
     text-decoration: none;
     color: var(--nav-color);
+    /* border: 2px solid red; */
+    padding: 7px 4px;
 }
 .Navbar li :hover{
     color:white;
     background-color: var(--nav-color);
-    padding:7px 0px;
-    margin :auto;
+    transition: 0.2s ease-out;
 }
 .navItems{
-    padding:7px 4px;
+    padding:7px 0px;
     margin:auto 50px ;
     color: var(--nav-color);
+    /* border: 2px solid green; */
+
 }
 .navItems:hover{
     background-color: var(--nav-color);
     color: white;
+    transition: 0.3s ease-out;
 }
 .Search{
     float: right;
     clear:both;
     padding:5px;
+    margin-left: 85px;
+    /* border:2px solid greenyellow; */
 }
 .Search input{
     border-radius: 5px;
